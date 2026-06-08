@@ -215,14 +215,7 @@ public class AppController {
     }
 
     @FXML void onCheckPatientIDButtonClick() {
-        // checks non-null patientID data
-        try {
-            int pID = Integer.parseInt(patientIDCTScanTabTextBox.getText());
-        } catch (Throwable t) {
-            confirmResultsCTScanTextArea.setText("Null User Value");
-            return;
-        }
-
+        // checks patientID data
         if(!checkValidUser(patientIDCTScanTabTextBox)) {
             confirmResultsCTScanTextArea.setText("Not a Valid User");
         }
@@ -348,6 +341,14 @@ public class AppController {
     @FXML public TextArea accessResultsTextArea;
 
     @FXML void onFetchPatientDataAccessResultsButtonClick() {
+        if(!checkValidUser(patientIDAccessResultsTextbox)) {
+            accessResultsTextArea.setText("Not a Valid User");
+            return;
+        }
+        else {
+            accessResultsTextArea.setText("Valid User");
+        }
+
         for(int i = 0; i < healthApp.getLoginModel().getCTTestList().size(); i++) {
             CTTest tempCTTest = healthApp.getLoginModel().getCTTestList().get(i);
             int patientID = tempCTTest.getPatientID();
