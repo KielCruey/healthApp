@@ -3,6 +3,14 @@
 * Used IntelliJ IDE
 * Used JavaFX library for UI
 
+## To Download Health Application Code
+Go to your favorite CLI. Go to some path to download the code
+
+Then type the following command in the CLI:
+```
+git clone https://github.com/KielCruey/healthApp.git
+```
+
 # Videos
 Videos are located "videos/" path in repository. 
 
